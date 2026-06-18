@@ -1,0 +1,134 @@
+/* ─── Google Fonts ──────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design System CSS Custom Properties ────────────────────────────────────── */
+:root {
+  --color-bg:         #0A0A0F;
+  --color-surface:    #111118;
+  --color-border:     #1E1E2E;
+  --color-accent:     #6C63FF;
+  --color-accent-glow:#6C63FF33;
+  --color-success:    #22D3A5;
+  --color-warning:    #F5A623;
+  --color-danger:     #FF4D6D;
+  --color-text:       #E8E8F0;
+  --color-muted:      #6B6B80;
+}
+
+/* ─── Base Reset & Global Styles ─────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar Styling ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-accent-glow);
+  color: var(--color-text);
+}
+
+/* ─── Focus Visible Outline ──────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ─── Date Input Calendar Icon Color (Webkit) ────────────────────────────────── */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+/* ─── Select Option Styling ──────────────────────────────────────────────────── */
+select option {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* ─── Smooth Page Transitions ────────────────────────────────────────────────── */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ─── Line Clamp Utility ─────────────────────────────────────────────────────── */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Glassmorphism Card Effect ──────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(17, 17, 24, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+/* ─── Glow Effects ───────────────────────────────────────────────────────────── */
+.glow-accent {
+  box-shadow: 0 0 20px var(--color-accent-glow);
+}
+
+.glow-success {
+  box-shadow: 0 0 20px rgba(34, 211, 165, 0.2);
+}
+
+.glow-danger {
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.2);
+}
+
+/* ─── Gradient Text ──────────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #6C63FF, #22D3A5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Animated Gradient Background ──────────────────────────────────────────── */
+.bg-animated-gradient {
+  background: radial-gradient(ellipse at top left, rgba(108,99,255,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom right, rgba(34,211,165,0.05) 0%, transparent 50%),
+              #0A0A0F;
+}
